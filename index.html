@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Cronograma de Casamento</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerador de Cronograma de Casamento</h1>
+        <form id="schedule-form">
+            <div class="form-section">
+                <label for="groom-name">Nome do Noivo:</label>
+                <input type="text" id="groom-name" required>
+
+                <label for="bride-name">Nome da Noiva:</label>
+                <input type="text" id="bride-name" required>
+
+                <label for="event-date">Data do Evento:</label>
+                <input type="date" id="event-date" required>
+
+                <label for="event-time">Horário do Evento:</label>
+                <input type="time" id="event-time" required>
+            </div>
+
+            <h2>Etapas do Evento</h2>
+            <div id="event-entries">
+                <div class="entry-item">
+                    <label>Nome da Entrada:</label>
+                    <input type="text" class="entry-name" placeholder="Ex: Entrada da Noiva" required>
+
+                    <label>Música:</label>
+                    <input type="text" class="entry-music" placeholder="Ex: Marcha Nupcial">
+
+                    <label>Ordem:</label>
+                    <input type="number" class="entry-order" min="1" value="1" required>
+
+                    <div>
+                        <input type="checkbox" class="is-groomsmen">
+                        <label for="is-groomsmen">Padrinhos?</label>
+                    </div>
+
+                    <div class="padrinhos-names" style="display: none;">
+                        <label>Nomes dos Padrinhos (um por linha):</label>
+                        <textarea class="groomsmen-names"></textarea>
+                    </div>
+
+                    <button type="button" class="remove-entry">Remover</button>
+                </div>
+            </div>
+            <button type="button" class="add-entry">Adicionar Etapa</button>
+
+            <button type="submit">Gerar Cronograma</button>
+        </form>
+
+        <div id="schedule-output">
+            <h2>Cronograma do Casamento</h2>
+            <div class="schedule-header">
+                </div>
+            <div id="schedule-body">
+                </div>
+            <div class="pdf-button-container">
+                <button id="save-pdf-btn">Salvar Cronograma em PDF</button>
+            </div>
+        </div>
+    </div>
+<script src="script.js"></script>
+    
+</body>
+</html>

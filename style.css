@@ -1,0 +1,201 @@
+  body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #6a0572;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="time"],
+        textarea {
+            width: calc(100% - 22px);
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .form-section {
+            background-color: #f1e9f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px dashed #d1b6d6;
+        }
+        .entry-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr 100px auto;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .entry-item input, .entry-item textarea {
+            margin-bottom: 0;
+        }
+        .entry-item button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+        .entry-item button:hover {
+            background-color: #c82333;
+        }
+        button.add-entry {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            margin: 20px auto 30px auto;
+            transition: background-color 0.3s ease;
+        }
+        button.add-entry:hover {
+            background-color: #218838;
+        }
+        button[type="submit"] {
+            background-color: #6a0572;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            display: block;
+            margin: 40px auto 0 auto;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #53045a;
+        }
+        #schedule-output {
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: none; /* Escondido inicialmente */
+            border: 3px solid #FFD700; /* Borda dourada para depuração */
+            overflow: visible !important; /* Força o overflow para não esconder conteúdo */
+            position: relative; /* Garante um contexto de posicionamento */
+        }
+        #schedule-output h2 {
+            color: #6a0572;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .schedule-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+        .schedule-header p {
+            font-size: 1.1em;
+            margin: 5px 0;
+            color: #444;
+        }
+        .schedule-entry {
+            background-color: #fdfbff;
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            border-left: 5px solid #6a0572;
+            border-radius: 5px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+            display: flex; 
+            justify-content: space-between;
+            align-items: flex-start; 
+        }
+        .schedule-entry strong {
+            color: #6a0572;
+        }
+        .schedule-entry .details {
+            flex-grow: 1;
+        }
+        .schedule-entry .order {
+            background-color: #6a0572;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 50%;
+            font-weight: bold;
+            min-width: 30px;
+            text-align: center;
+            margin-right: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0; 
+        }
+        .schedule-entry ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 5px;
+            font-style: italic;
+            color: #666;
+            margin-left: 0; 
+        }
+        .schedule-entry ul li {
+            margin-bottom: 3px;
+        }
+        .padrinhos-names {
+            margin-top: 15px;
+            background-color: #f7f0f8;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px dashed #d1b6d6;
+        }
+        .padrinhos-names textarea {
+            margin-bottom: 0;
+            height: 80px;
+        }
+        .pdf-button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        #save-pdf-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        #save-pdf-btn:hover {
+            background-color: #0056b3;
+        }
