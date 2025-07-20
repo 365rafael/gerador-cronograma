@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
         <h1>Gerador de Cronograma de Casamento</h1>
@@ -24,6 +26,22 @@
 
                 <label for="event-time">Horário do Evento:</label>
                 <input type="time" id="event-time" required>
+
+                <label for="event-location">Local do Evento:</label>
+                <input type="text" id="event-location" required>
+
+                <div class="form-group">
+                    <label for="color-palette">Paleta de Cores do PDF:</label>
+                    <select id="color-palette">
+                        <option value="color">Colorido (Padrão - Roxo)</option>
+                        <option value="blue-green">Tons de Azul</option>
+                        <option value="warm-tones">Tons Quentes (Marrom e Laranja)</option>
+                        <option value="grayscale">Tons de Cinza (Preto e Branco)</option>
+                    </select>
+                </div>
+
+                <label for="event-logo">Logotipo/Monograma (Opcional):</label>
+                <input type="file" id="event-logo" accept="image/*">
             </div>
 
             <h2>Etapas do Evento</h2>
@@ -59,15 +77,20 @@
         <div id="schedule-output">
             <h2>Cronograma do Casamento</h2>
             <div class="schedule-header">
-                </div>
+            </div>
             <div id="schedule-body">
-                </div>
+            </div>
             <div class="pdf-button-container">
                 <button id="save-pdf-btn">Salvar Cronograma em PDF</button>
             </div>
         </div>
+        <div id="loading-overlay"
+            style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.8); justify-content: center; align-items: center; z-index: 1000;">
+            <p style="font-size: 2em; color: #6a0572; font-weight: bold;">Gerando seu PDF... Por favor, aguarde!</p>
+        </div>
     </div>
-<script src="script.js"></script>
-    
+    <script src="script.js"></script>
+
 </body>
+
 </html>
